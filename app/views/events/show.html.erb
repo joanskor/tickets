@@ -25,4 +25,8 @@
   <%= @event.event_date %>
 </p>
 
+<%= render "new_ticket", ticket: Ticket.new(:event_id=>@event.id) %>
+
+<%= render "tickets_list", tickets: @event.tickets %>
+
 <%= link_to 'Powrót', events_path %>

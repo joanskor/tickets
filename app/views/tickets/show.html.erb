@@ -25,5 +25,15 @@
   <%= @ticket.email_address %>
 </p>
 
+<p>
+<strong>Numer telefonu:</strong>
+<%= @ticket.phone %>
+</p>
+
+<p>
+<strong>Id wydarzenia:</strong>
+<%= @ticket.event_id %>
+</p>
+
 <%= link_to 'Edytuj', edit_ticket_path(@ticket) %> |
 <%= link_to 'Powrót', tickets_path %>

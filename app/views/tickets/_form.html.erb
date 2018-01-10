@@ -28,12 +28,22 @@
 
   <div class="field">
     <%= form.label "Cena" %>
-    <%= form.text_field :price, id: :ticket_price %>
+    <%= form.number_field :price, id: :ticket_price %>
   </div>
 
   <div class="field">
     <%= form.label "Adres e-mail" %>
     <%= form.text_field :email_address, id: :ticket_email_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Numer telefonu" %>
+    <%= form.telephone_field :phone, id: :ticket_phone %>
+  </div>
+
+  <div class="field">
+  <%= form.label "Id wydarzenia" %>
+    <%= form.number_field :event_id, id: :ticket_event_id %>
   </div>
 
   <div class="actions">

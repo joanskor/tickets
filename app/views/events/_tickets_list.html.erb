@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Bilety</h1>
+<h2>Zakupione bilety</h2>
 
 <table>
   <thead>
@@ -11,13 +9,12 @@
       <th>Cena</th>
       <th>Adres e-mail</th>
       <th>Numer telefonu</th>
-      <th>Id wydarzenia</th>
       <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @tickets.each do |ticket| %>
+    <% tickets.each do |ticket| %>
       <tr>
         <td><%= ticket.name %></td>
         <td><%= ticket.seat_id_seq %></td>
@@ -25,15 +22,7 @@
         <td><%= ticket.price %></td>
         <td><%= ticket.email_address %></td>
         <td><%= ticket.phone %></td>
-        <td><%= ticket.event_id %></td>
-        <td><%= link_to 'Pokaż', ticket %></td>
-        <td><%= link_to 'Edytuj', edit_ticket_path(ticket) %></td>
-        <td><%= link_to 'Usuń', ticket, method: :delete, data: { confirm: 'Czy na pewno?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'Nowy bilet', new_ticket_path %>
