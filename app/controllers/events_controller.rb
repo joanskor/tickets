@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show]
+  before_action :check_logged_in, :only => [:new, :create]
 
   def index
     @events = Event.all
@@ -15,26 +15,23 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    
-        respond_to do |format|
           if @event.save
-            format.html { redirect_to @event, notice: 'Event was successfully created.' }
-            format.json { render :show, status: :created, location: @event }
+            flash[:notice] = 'Dodawanie biletu zakończono sukcesem.'
+            redirect_to "/events/#{@event.id}"
           else
-            format.html { render :new }
-            format.json { render json: @event.errors, status: :unprocessable_entity }
+            render 'new'
           end
-        end
   end
 
-  private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_event
-    @ticket = Event.find(params[:id])
-  end
+  private 
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
     params.require(:event).permit(:artist, :description, :price_low, :price_high, :event_date)
+  end
+
+  def check_logged_in
+    authenticate_or_request_with_http_basic("Ads") do |username, password|
+      username == "admin" && password == "admin"
+    end
   end
 end

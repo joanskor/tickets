@@ -1,28 +1,28 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= flash[:notice] %></p>
 
 <p>
-  <strong>Artist:</strong>
+  <strong>Nazwa artysty:</strong>
   <%= @event.artist %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Krótki opis:</strong>
   <%= @event.description %>
 </p>
 
 <p>
-  <strong>Price low:</strong>
+  <strong>Cena minimalna:</strong>
   <%= @event.price_low %>
 </p>
 
 <p>
-  <strong>Price high:</strong>
+  <strong>Cena maksymalna:</strong>
   <%= @event.price_high %>
 </p>
 
 <p>
-  <strong>Event date:</strong>
+  <strong>Data wydarzenia:</strong>
   <%= @event.event_date %>
 </p>
 
-<%= link_to 'Back', tickets_path %>
+<%= link_to 'Powrót', events_path %>
