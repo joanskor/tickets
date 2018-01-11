@@ -1,0 +1,27 @@
+<h2>Lista wydarzeń</h2>
+
+
+<table>
+<thead>
+  <tr>
+    <th>Id</th>
+    <th>Nazwa artysty</th>
+    <th>Cena min</th>
+    <th>Cena max</th>
+    <th>Data</th>
+    <th colspan="4"></th>
+  </tr>
+</thead>
+
+<tbody>
+  <% events.each do |event| %>
+    <tr>
+      <td><%= event.id %></td>
+      <td><%= event.artist %></td>
+      <td><%= event.price_low %></td>
+      <td><%= event.price_high %></td>
+      <td><%= event.event_date %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

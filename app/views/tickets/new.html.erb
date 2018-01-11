@@ -1,5 +1,9 @@
 <h1>Nowy bilet</h1>
 
+<%= render "events_list", events: Event.all %>
+
+<h2>Zakup biletu</h2>
+
 <%= render 'form', ticket: @ticket %>
 
 <%= link_to 'Powrót', tickets_path %>

@@ -1,4 +1,6 @@
-<h1>Edycja biletu</h1>
+<%= render "events_list", events: Event.all %>
+
+<h2>Edycja biletu</h2>
 
 <%= render 'form', ticket: @ticket %>
 
