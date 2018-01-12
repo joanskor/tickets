@@ -7,7 +7,7 @@
 
 <p>
   <strong>Krótki opis:</strong>
-  <%= @event.description %>
+  <%= @event.description != "" ? @event.description : "Brak" %>
 </p>
 
 <p>
@@ -23,6 +23,21 @@
 <p>
   <strong>Data wydarzenia:</strong>
   <%= @event.event_date %>
+</p>
+
+<p>
+  <strong>Limit wieku:</strong>
+  <%= @event.age_limit %>
+</p>
+
+<p>
+  <strong>Liczba miejsc:</strong>
+  <%= @event.ticket_amout %>
+</p>
+
+<p>
+  <strong>Sprzedanych miejsc:</strong>
+  <%= @event.tickets.count %>
 </p>
 
 <%= render "new_ticket", ticket: Ticket.new(:event_id=>@event.id) %>

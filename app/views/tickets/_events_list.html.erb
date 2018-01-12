@@ -1,6 +1,5 @@
 <h2>Lista wydarzeń</h2>
 
-
 <table>
 <thead>
   <tr>
@@ -9,6 +8,8 @@
     <th>Cena min</th>
     <th>Cena max</th>
     <th>Data</th>
+    <th>Limit wiekowy</th>
+    <th>Ilość miejsc</th>
     <th colspan="4"></th>
   </tr>
 </thead>
@@ -21,6 +22,8 @@
       <td><%= event.price_low %></td>
       <td><%= event.price_high %></td>
       <td><%= event.event_date %></td>
+      <td><%= event.age_limit %></td>
+      <td><%= event.ticket_amout %></td>
     </tr>
   <% end %>
 </tbody>

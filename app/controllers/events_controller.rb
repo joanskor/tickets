@@ -26,7 +26,8 @@ class EventsController < ApplicationController
   private 
 
   def event_params
-    params.require(:event).permit(:artist, :description, :price_low, :price_high, :event_date)
+    params.require(:event).permit(:artist, :description, :price_low, :price_high, 
+      :event_date, :ticket_amout, :age_limit)
   end
 
   def check_logged_in
